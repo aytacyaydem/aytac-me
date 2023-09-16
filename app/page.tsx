@@ -1,7 +1,14 @@
-export default async function Home() {
+'use client';
+import ThemeSwitchButton from '@/components/ThemeSwitchButton';
+import { Flex, Text } from '@radix-ui/themes';
+
+export default function Home() {
+  // const users = await getAllUsers();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
-      <h1 className="text-orange-500 text-6xl">There will be sth</h1>
-    </main>
+    <Flex direction="column" gap="2">
+      <Text>Hello from Radix Themes :)</Text>
+      <ThemeSwitchButton />
+    </Flex>
   );
 }

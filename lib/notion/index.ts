@@ -8,6 +8,14 @@ export const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 }) as ClientType;
 
+export const getAllUsers = React.cache(async () => {
+  try {
+    return notion.users.list({});
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 // export const fetchPages = React.cache(() => {
 //   return notion.databases.query({
 //     database_id: process.env.NOTION_DATABASE_ID!,
