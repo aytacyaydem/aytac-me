@@ -1,14 +1,19 @@
-'use client';
-import ThemeSwitchButton from '@/components/ThemeSwitchButton';
-import { Flex, Text } from '@radix-ui/themes';
+import Header from '@/components/Header';
+import ThemeModeToggle from '@/components/ThemeSwitcher';
+import { Button } from '@/components/ui/button';
+import APIEndpoints from '@/constants/api-endpoints';
+import parseNotionPagesForHomepageCard from '@/lib/parse-notion-pages';
 
-export default function Home() {
-  // const users = await getAllUsers();
+export default async function Home() {
+  const response = await fetch(APIEndpoints.api.notion.posts);
+  const { allPosts } = await response.json();
+  const allPostsSerialized = parseNotionPagesForHomepageCard(allPosts) as HomepagePostCard[];
+
+  console.log({ allPostsSerialized });
 
   return (
-    <Flex direction="column" gap="2">
-      <Text>Hello from Radix Themes :)</Text>
-      <ThemeSwitchButton />
-    </Flex>
+    <div>
+      <Header />
+    </div>
   );
 }

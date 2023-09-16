@@ -1,6 +1,5 @@
-import '@radix-ui/themes/styles.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
-import { Theme, ThemePanel } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -13,18 +12,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Theme
-          appearance="light"
-          accentColor="crimson"
-          grayColor="sand"
-          radius="large"
-          scaling="95%"
-        >
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-          <ThemePanel />
-        </Theme>
+        </ThemeProvider>
       </body>
     </html>
   );
