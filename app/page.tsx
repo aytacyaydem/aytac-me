@@ -1,6 +1,4 @@
-import Header from '@/components/Header';
-import ThemeModeToggle from '@/components/ThemeSwitcher';
-import { Button } from '@/components/ui/button';
+import Hero from '@/components/Hero';
 import APIEndpoints from '@/constants/api-endpoints';
 import parseNotionPagesForHomepageCard from '@/lib/parse-notion-pages';
 
@@ -12,8 +10,8 @@ export default async function Home() {
   console.log({ allPostsSerialized });
 
   return (
-    <div>
-      <Header />
+    <div className="flex py-4 ">
+      <Hero />
     </div>
   );
 }
