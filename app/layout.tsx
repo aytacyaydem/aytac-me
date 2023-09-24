@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={albert_sans.className} suppressHydrationWarning>
+      <body className={albert_sans.className} suppressHydrationWarning data-theme="second-theme">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <div className="container h-[calc(100vh-80px)]">{children}</div>

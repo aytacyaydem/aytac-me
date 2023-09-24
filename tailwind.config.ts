@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import { skeleton } from '@skeletonlabs/tw-plugin';
+import { customTheme } from './custom-theme';
+import { secondTheme } from './second-theme';
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -72,5 +75,12 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    skeleton({
+      themes: {
+        custom: [customTheme, secondTheme],
+      },
+    }),
+  ],
 };

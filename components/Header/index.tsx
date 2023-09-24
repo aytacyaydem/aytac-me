@@ -20,7 +20,7 @@ const links = [
 const Header = () => {
   return (
     <header>
-      <nav className="w-full bg-white dark:bg-gray-950 shadow-sm dark:shadow-gray-900">
+      <nav className="w-full shadow-md dark:shadow-gray-900">
         <div className="container">
           <div className="h-20 flex items-center justify-between">
             <ul>
