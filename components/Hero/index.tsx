@@ -11,9 +11,9 @@ const Hero = () => {
   return (
     <div className="flex flex-col">
       <pre>
-        <code>
+        <code className="block whitespace-pre-wrap overflow-x-auto">
           <div
-            className={`javascript px-4 py-4 rounded-md ${
+            className={`javascript px-4 py-4 rounded-md w-full overflow-x-auto ${
               codeValue.length > 0 ? 'shadow-black shadow-lg' : ''
             }`}
             id="otherDiv"
