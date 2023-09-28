@@ -1,11 +1,13 @@
 import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Anek_Bangla } from 'next/font/google';
+import { Rubik } from 'next/font/google';
 import Header from '@/components/Header';
 import 'highlight.js/styles/a11y-dark.css';
 
-const albert_sans = Anek_Bangla({ subsets: ['latin'] });
+const albert_sans = Rubik({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={albert_sans.className} suppressHydrationWarning data-theme="second-theme">
+      <body className={albert_sans.className} suppressHydrationWarning data-theme="custom-theme">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <div className="container h-[calc(100vh-80px)]">{children}</div>

@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import HeroStatic from '@/components/HeroStatic';
 import APIEndpoints from '@/constants/api-endpoints';
 import parseNotionPagesForHomepageCard from '@/lib/parse-notion-pages';
 
@@ -10,8 +11,8 @@ export default async function Home() {
   console.log({ allPostsSerialized });
 
   return (
-    <div className="flex py-4 ">
-      <Hero />
+    <div className="flex py-4">
+      <HeroStatic />
     </div>
   );
 }
