@@ -4,6 +4,10 @@ import React from 'react';
 const CustomLink = ({
   children,
   href,
+  target,
+  prefetch,
+  rel,
+  scroll,
   restProps,
 }: {
   children:
@@ -21,7 +25,15 @@ const CustomLink = ({
   rel?: string;
 }): React.ReactNode => {
   return (
-    <Link className="link-text-token underline" href={href} {...restProps}>
+    <Link
+      className="link-text-token underline"
+      {...(target && { target })}
+      {...(href && { href })}
+      {...(prefetch && { prefetch })}
+      {...(rel && { rel })}
+      {...(scroll && { scroll })}
+      {...restProps}
+    >
       {children}
     </Link>
   );
