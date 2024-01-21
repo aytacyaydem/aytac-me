@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={albert_sans.className}
         suppressHydrationWarning
-        data-theme="custom-theme"
+        data-theme="red"
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
