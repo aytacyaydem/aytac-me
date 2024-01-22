@@ -1,9 +1,8 @@
-import Hero from "@/components/Hero";
+import AnimatedHamburgerIcon from "@/components/AnimatedHamburgerIcon";
 import HeroStatic from "@/components/HeroStatic";
+import Sidebar from "@/components/Sidebar";
 import APIEndpoints from "@/constants/api-endpoints";
 import parseNotionPagesForHomepageCard from "@/lib/parse-notion-pages";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const response = await fetch(APIEndpoints.api.notion.posts);
@@ -15,15 +14,9 @@ export default async function Home() {
   console.log({ allPostsSerialized });
 
   return (
-    <div className=" py-4">
+    <div className="py-4">
       <HeroStatic />
-      <Alert>
-        <AlertTitle>Heads up!</AlertTitle>
-        <AlertDescription>
-          You can add components and dependencies to your app using the cli.
-        </AlertDescription>
-      </Alert>
-      <Button>Button</Button>
+      <Sidebar />
     </div>
   );
 }

@@ -77,6 +77,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
+    require("tailwind-hamburgers"),
     // skeleton({
     //   themes: {
     //     custom: [customTheme, secondTheme],
